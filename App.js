@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 //here heading == will create an object/element
 const heading = React.createElement(
   "h1",

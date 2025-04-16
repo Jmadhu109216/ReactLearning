@@ -1,0 +1,30 @@
+{
+  "name": "react-leaning",
+  "version": "1.0.0",
+  "description": "This is the React learning by Madhu.",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jmadhu109216/ReactLearning.git"
+  },
+  "keywords": [],
+  "author": "Madhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jmadhu109216/ReactLearning/issues"
+  },
+  "homepage": "https://github.com/Jmadhu109216/ReactLearning#readme",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "browserslist": [
+    "last 2 Chrome version",
+    "last 2 firefox version"
+  ]
+}
