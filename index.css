@@ -1,7 +1,52 @@
-.name {
-  color: red;
-  background-color: black;
+.Header-Container {
+  display: flex;
+  justify-content: space-between;
+  border: black solid 2px;
 }
-#root {
-  background-color: green;
+.Navigation-box > ul {
+  display: flex;
+}
+.Navigation-box > ul > li {
+  padding: 25px 20px;
+  list-style-type: none;
+  margin: 10px 0;
+}
+.Logo-Name {
+  width: 200px;
+}
+.Body-Container {
+  padding: 5px;
+}
+.Search-Container {
+  width: 200px;
+  height: 20px;
+  border: 1px solid black;
+  margin: 5px;
+}
+.rest-cord {
+  margin: 5px;
+  padding: 3px;
+  width: 200px;
+
+  background-color: rgb(192, 226, 225);
+
+  box-shadow: 0px 0px 5px black;
+}
+.rest-cord:hover {
+  cursor: pointer;
+  background-color: rgb(110, 141, 146);
+  border: 1px solid black;
+}
+/* .rest-Container :hover {
+  background-color: rgb(110, 141, 146);
+  cursor: pointer;
+  border: 1px solid black;
+} */
+.rest-Container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Item-IMG {
+  width: 100%;
 }
