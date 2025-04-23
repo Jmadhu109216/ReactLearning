@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./components/Header";
+import Body from "./components/Body";
 
 //*****************************Project***************************************/
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -20,72 +22,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
   -Copy wrights
   -Contact
 */
-
-const RestContainer = (prop) => {
-  return (
-    <div className="rest-cord">
-      <img
-        className="Item-IMG"
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/lwpftwtyym12ly6udmgf"
-      />
-      <h4 className="rest-Name">{prop.restName}</h4>
-      <h4 className="rest-rating">{prop.restRate}</h4>
-      <h4 className="location">{prop.restLocation}</h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="Body-Container">
-      <div className="Search-Container">Search bar</div>
-
-      <div className="rest-Container">
-        <RestContainer
-          restName="Mehfil"
-          restRate="4 star"
-          restLocation="Hitech City"
-        />
-        <RestContainer
-          restName="Anthera"
-          restRate="4.7 star"
-          restLocation="Madhapur"
-        />
-        <RestContainer
-          restName="KFC"
-          restRate="3.2 star"
-          restLocation="Raidhurgam"
-        />
-      </div>
-    </div>
-  );
-};
-
-const Header = () => {
-  return (
-    <div className="Header-Container">
-      <div className="Logo">
-        <img
-          className="Logo-Name"
-          src="https://i0.wp.com/opportunitycell.com/wp-content/uploads/2022/09/Screen-Shot-2022-09-02-at-4.52.38-PM.png?fit=480%2C250&ssl=1"
-        />
-      </div>
-      <div className="Navigation-box">
-        <ul>
-          <li
-            className="cart"
-            src="https://cdn-icons-png.flaticon.com/512/1413/1413908.png"
-          >
-            Cart
-          </li>
-          <li className="Home">Home</li>
-          <li className="About">About</li>
-          <li className="SignOut">Sign Out</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
 
 const AppLayout = () => {
   return (
