@@ -59,22 +59,30 @@ import ShimmerUI from "./ShimmerUI";
 // ];
 
 const Body = () => {
-  const [listOfRestorent, setlistOfRestorent] = useState(restrautList);
-  const [searchListRestorent, setSearchListRestorent] = useState(restrautList);
+  const [listOfRestorent, setlistOfRestorent] = useState([]);
+  const [searchListRestorent, setSearchListRestorent] = useState([]);
 
   //search funtionality
   let [searchText, setSearchText] = useState("");
 
-  // useEffect(() => {
-  //   fetchData();
-  // });
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  // async function fetchData() {
-  //   const data = await fetch(
-  //     "https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-  //   );
-  //   const json = await data.json();
-  // }
+  async function fetchData() {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    var restAPIData = await data.json();
+    console.log(
+      restAPIData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+    );
+    var restorentListAPI =
+      restAPIData.data.cards[4].card.card.gridElements.infoWithStyle
+        .restaurants;
+    setlistOfRestorent(restorentListAPI);
+    setSearchListRestorent(restorentListAPI);
+  }
 
   //adding shimmer UI insead of spinner for the good user experience
   if (listOfRestorent.length === 0) {
@@ -94,7 +102,7 @@ const Body = () => {
         <button
           className="search-btn"
           onClick={() => {
-            let searchData = restrautList.filter((rest) => {
+            let searchData = listOfRestorent.filter((rest) => {
               return rest.info.name
                 .toLocaleLowerCase()
                 .includes(searchText.toLowerCase());
@@ -107,8 +115,8 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            const filterData = restrautList.filter((rest) => {
-              return rest.info.avgRatingString >= 4.5;
+            const filterData = listOfRestorent.filter((rest) => {
+              return rest.info.avgRatingString >= 4.2;
             });
             setSearchListRestorent(filterData);
           }}
@@ -118,10 +126,10 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            setlistOfRestorent(restrautList);
+            setSearchListRestorent(listOfRestorent);
           }}
         >
-          All Restorent
+          All Restorents
         </button>
       </div>
 
