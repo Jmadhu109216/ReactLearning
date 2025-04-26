@@ -77,3 +77,9 @@
   display: flex;
   margin: 10px opx;
 }
+.NoResultFoundMsg-Container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 80vh;
+}

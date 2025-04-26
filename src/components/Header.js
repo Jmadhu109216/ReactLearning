@@ -32,8 +32,6 @@ const Header = () => {
           >
             {btnName}
           </button>
-
-          {/* // <LogIn /> */}
         </ul>
       </div>
     </div>
