@@ -25,7 +25,8 @@
     "express": "^4.21.2",
     "http-proxy-middleware": "^2.0.9",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^6.30.0"
   },
   "browserslist": [
     "last 2 Chrome version",

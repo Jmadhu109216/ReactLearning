@@ -123,8 +123,9 @@ const Body = () => {
     var restorentListAPI =
       restAPIData.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
-    console.log(restAPIData);
+    //console.log(restAPIData);
     setlistOfRestorent(restorentListAPI);
+    //console.log(restorentListAPI);
     setSearchListRestorent(restorentListAPI);
   }
 

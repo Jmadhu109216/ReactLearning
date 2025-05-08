@@ -2,9 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import About from "./components/AboutClass";
+import Contact from "./components/Contact";
+import Error from "./components/Error";
+import User from "./components/UserClass";
+
+import RestorentMenu from "./components/RestorentMenu";
 
 //*****************************Project***************************************/
-const root = ReactDOM.createRoot(document.getElementById("root"));
 
 //**** project Design********
 /*
@@ -27,12 +33,49 @@ const AppLayout = () => {
   return (
     <div className="App-Name">
       {<Header />}
-
-      {<Body />}
+      {<Outlet />}
     </div>
   );
 };
-root.render(<AppLayout />);
+//outlet is a hook used to render the child components inside the parent component
+
+//below are the routes for the application
+//react router -->create the routes for the application
+//createBrowserRouter --> create the routes for the application
+//RouterProvider --> provide the routes for the application
+const approuter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "restorent/:restId",
+        //this is used to get the id of the restorent from the url dynamically
+        element: <RestorentMenu />,
+      },
+      {
+        path: "user",
+        element: <User userName="Madhu" />,
+      },
+    ],
+  },
+]);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<RouterProvider router={approuter} />);
 
 //****************************Learning ******************************************
 

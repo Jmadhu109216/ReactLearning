@@ -1,6 +1,7 @@
 import { use } from "react";
 import LogIn from "./LogIn";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
   let [btnName, setbtnName] = useState(["LogIn"]);
   return (
@@ -19,9 +20,16 @@ const Header = () => {
           >
             Cart
           </li>
-          <li className="Home">Home</li>
-          <li className="About">About</li>
-          <li className="SignOut">Sign Out</li>
+
+          <li className="Home">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="About">
+            <Link to="/about">About</Link>
+          </li>
+          <li className="Contact Us">
+            <Link to="/contact">Contact Us</Link>
+          </li>
           <button
             className="LogIn-Button"
             onClick={() => {
