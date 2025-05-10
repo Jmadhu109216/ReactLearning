@@ -3,6 +3,7 @@ import restrautList from "./Utils/MockData";
 import { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
 import NoResultFoundMsg from "./NoResultFoundMsg";
+import useOnlineStatus from "./Utils/useOnlineStatusHook";
 
 //state variable:
 // - A state variable is a variable that holds the state of a component in React.
@@ -105,6 +106,7 @@ import NoResultFoundMsg from "./NoResultFoundMsg";
 const Body = () => {
   const [listOfRestorent, setlistOfRestorent] = useState([]);
   const [searchListRestorent, setSearchListRestorent] = useState([]);
+  const onlineStatus = useOnlineStatus();
 
   //search funtionality
   let [searchText, setSearchText] = useState("");
@@ -128,9 +130,11 @@ const Body = () => {
     //console.log(restorentListAPI);
     setSearchListRestorent(restorentListAPI);
   }
-
-  //adding shimmer UI insead of spinner for the good user experience
+  if (onlineStatus === false) {
+    return <h1>Looks like you are offline</h1>;
+  }
   if (listOfRestorent.length === 0) {
+    //adding shimmer UI insead of spinner for the good user experience
     return <ShimmerUI />;
   }
   //if no data found then show the no result found image
