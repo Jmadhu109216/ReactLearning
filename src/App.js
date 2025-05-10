@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,6 +7,7 @@ import About from "./components/AboutClass";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import User from "./components/UserClass";
+import ShimmerUI from "./components/ShimmerUI";
 
 import RestorentMenu from "./components/RestorentMenu";
 
@@ -28,6 +29,19 @@ import RestorentMenu from "./components/RestorentMenu";
   -Copy wrights
   -Contact
 */
+/*
+Chunking
+code splitting
+lazy loading
+ondemand loading
+dynamic bundling
+
+above all are the same. which we can use to load the code on demand
+and not all at once.
+bundle code (js file) will be created and it will be used to load the code on demand(multiple js files will be created)
+
+*/
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
   return (
@@ -69,6 +83,21 @@ const approuter = createBrowserRouter([
       {
         path: "user",
         element: <User userName="Madhu" />,
+      },
+      {
+        path: "grocery",
+        element: (
+          <Suspense
+            fallback={
+              <ShimmerUI />
+              //this is used to show the loading screen while the component is being loaded
+              //this will be shown until the component is loaded
+            }
+          >
+            <Grocery />
+            {/* Suspanse is used to load the component on demand and not all at once, it is a component from the react*/}
+          </Suspense>
+        ),
       },
     ],
   },

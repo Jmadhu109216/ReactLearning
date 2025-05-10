@@ -2,7 +2,10 @@ import { use } from "react";
 import LogIn from "./LogIn";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "./Utils/useOnlineStatusHook";
 const Header = () => {
+  const onlineStatus = useOnlineStatus();
+  console.log(onlineStatus);
   let [btnName, setbtnName] = useState(["LogIn"]);
   return (
     <div className="Header-Container">
@@ -14,6 +17,9 @@ const Header = () => {
       </div>
       <div className="Navigation-box">
         <ul>
+          <li className="OnlineStatus">
+            Online Status:{onlineStatus ? " ✅" : " 🔴"}
+          </li>
           <li
             className="cart"
             src="https://cdn-icons-png.flaticon.com/512/1413/1413908.png"
@@ -29,6 +35,9 @@ const Header = () => {
           </li>
           <li className="Contact Us">
             <Link to="/contact">Contact Us</Link>
+          </li>
+          <li className="Grocery">
+            <Link to="/grocery">Grocery</Link>
           </li>
           <button
             className="LogIn-Button"

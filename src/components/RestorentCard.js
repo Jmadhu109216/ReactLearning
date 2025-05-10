@@ -18,7 +18,7 @@ const RestorentCard = (
       <Link to={"/restorent/" + id}>
         <h1>{name}</h1>
       </Link>
-      <h2>{name}</h2>
+
       <h3>{cuisines.join(", ")}</h3>
       <h4>{avgRatingString} star</h4>
       <h4>{sla.lastMileTravelString} minutes</h4>
