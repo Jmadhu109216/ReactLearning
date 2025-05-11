@@ -125,7 +125,7 @@ const Body = () => {
     var restorentListAPI =
       restAPIData.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
-    //console.log(restAPIData);
+    console.log(restAPIData);
     setlistOfRestorent(restorentListAPI);
     //console.log(restorentListAPI);
     setSearchListRestorent(restorentListAPI);
@@ -144,17 +144,17 @@ const Body = () => {
 
   return (
     <div className="Body-Container">
-      <div className="filter-container">
+      <div className="flex m-3 ">
         <input
+          className="border-black border-2 mx-2"
           type="text"
-          className="search-input"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
         ></input>
         <button
-          className="search-btn"
+          className="bg-green-200 px-2 rounded-md"
           onClick={() => {
             let searchData = listOfRestorent.filter((rest) => {
               return rest.info.name
@@ -167,7 +167,7 @@ const Body = () => {
           Search
         </button>
         <button
-          className="filter-btn"
+          className="filter-btn bg-green-200 px-2 rounded-md mx-3 ml-6"
           onClick={() => {
             const filterData = listOfRestorent.filter((rest) => {
               return rest.info.avgRatingString >= 4.2;
@@ -178,7 +178,7 @@ const Body = () => {
           Top 4 star restorent
         </button>
         <button
-          className="filter-btn"
+          className="filter-btn  bg-green-200 px-2 rounded-md mx-3"
           onClick={() => {
             setSearchListRestorent(listOfRestorent);
           }}
@@ -187,7 +187,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="rest-Container">
+      <div className="rest-Container flex flex-wrap">
         {searchListRestorent.map((restaurant) => {
           return (
             <RestorentCard {...restaurant.info} key={restaurant.info.id} />

@@ -8,15 +8,16 @@ const RestorentCard = (
   { name, cloudinaryImageId, cuisines, sla, avgRatingString, id } // destructuring the props
 ) => {
   return (
-    <div className="rest-cord">
+    <div className="rest-cord w-52 m-3 shadow-xl shadow-gray-300 border border-white bg-gray-100 hover:bg-gray-200 rounded-lg">
       <img
+        className="p-1 h-80 rounded-2xl"
         src={
           "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
           cloudinaryImageId
         }
       />
       <Link to={"/restorent/" + id}>
-        <h1>{name}</h1>
+        <h1 className="font-bold py-2">{name}</h1>
       </Link>
 
       <h3>{cuisines.join(", ")}</h3>

@@ -1,7 +1,10 @@
-/* .App-Name {
-  background-color: rgb(192, 226, 225);
-} */
-.Header-Container {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* added tailwind - below CSS are commented and developed through the Tailwind CSS
+Make sure to install tailwind inteligence while using to get suggestions */
+/* .Header-Container {
   display: flex;
   justify-content: space-between;
   border: black solid 2px;
@@ -43,11 +46,7 @@
   background-color: rgb(110, 141, 146);
   border: 1px solid black;
 }
-/* .rest-Container :hover {
-  background-color: rgb(110, 141, 146);
-  cursor: pointer;
-  border: 1px solid black;
-} */
+
 .rest-Container {
   display: flex;
   flex-wrap: wrap;
@@ -90,4 +89,4 @@
   align-items: center;
   margin: auto;
   padding: 2cm;
-}
+} */

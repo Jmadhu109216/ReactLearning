@@ -8,39 +8,32 @@ const Header = () => {
   console.log(onlineStatus);
   let [btnName, setbtnName] = useState(["LogIn"]);
   return (
-    <div className="Header-Container">
+    <div className="flex justify-between border-b-4 bg-blue-50">
       <div className="Logo">
         <img
-          className="Logo-Name"
+          className="w-56"
           src="https://i0.wp.com/opportunitycell.com/wp-content/uploads/2022/09/Screen-Shot-2022-09-02-at-4.52.38-PM.png?fit=480%2C250&ssl=1"
         />
       </div>
       <div className="Navigation-box">
-        <ul>
-          <li className="OnlineStatus">
-            Online Status:{onlineStatus ? " ✅" : " 🔴"}
-          </li>
-          <li
-            className="cart"
-            src="https://cdn-icons-png.flaticon.com/512/1413/1413908.png"
-          >
-            Cart
-          </li>
+        <ul className="flex m-10 space-x-2">
+          <li className="px-3">Online Status:{onlineStatus ? " ✅" : " 🔴"}</li>
+          <li className="px-2">Cart</li>
 
-          <li className="Home">
+          <li className="px-3">
             <Link to="/">Home</Link>
           </li>
-          <li className="About">
+          <li className="px-3">
             <Link to="/about">About</Link>
           </li>
-          <li className="Contact Us">
+          <li className="px-3">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="Grocery">
+          <li className="px-3">
             <Link to="/grocery">Grocery</Link>
           </li>
           <button
-            className="LogIn-Button"
+            className="px-3 rounded-sm bg-green-200"
             onClick={() => {
               return btnName === "LogIn"
                 ? setbtnName("LogOut")
