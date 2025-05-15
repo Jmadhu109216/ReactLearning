@@ -26,7 +26,10 @@ class User extends React.Component {
         <h1>
           User Details {console.log(this.props.userName + " render called")}
         </h1>
-        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+        <button
+          className="bg-gray-300 border border-black rounded-l px-2"
+          onClick={() => this.setState({ count: this.state.count + 1 })}
+        >
           count
         </button>
         <h2>count: {this.state.count}</h2>

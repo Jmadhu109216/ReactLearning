@@ -52,8 +52,8 @@ class About extends React.Component {
 
   render() {
     return (
-      <div className="about">
-        <h1>React/React/React.....seeekoooo</h1>
+      <div className="about text-center bg-gray-100 w-fit p-10 m-10 mx-96 justify-self-center rounded-xl">
+        <h1 className="font-bold">React/React/React.....seeekoooo</h1>
         <h2>This project helps you to learn React library</h2>
         <h3>Below are the technologies are used to build this project</h3>
         <ul>
@@ -69,7 +69,6 @@ class About extends React.Component {
         <div className="userDetails">
           <div className="user">
             <User userName={"First User"} userRole={"AdminUser"} />
-            debugger;
             <User userName={"Second User"} userRole={"SuperUser"} />
           </div>
         </div>
