@@ -34,3 +34,5 @@ bundled js files are spilted into multiple files, which is helpes to load on dem
  Tail wind CSS is one type of library used to style the element
  instead of accesing the classNames in seperate files(css), on going only we can add the styles to our elements
   -->
+
+<!-- added tailwind CSS and also learnt about useContext -->

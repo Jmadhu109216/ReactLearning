@@ -22,7 +22,7 @@ class User extends React.Component {
   render() {
     const { userName, userRole } = this.props;
     return (
-      <div className="user-details">
+      <div className="user-details text">
         <h1>
           User Details {console.log(this.props.userName + " render called")}
         </h1>

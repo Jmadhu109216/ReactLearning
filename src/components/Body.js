@@ -1,4 +1,4 @@
-import RestorentCard from "./RestorentCard";
+import RestorentCard, { PromotedLableOnCard } from "./RestorentCard";
 import restrautList from "./Utils/MockData";
 import { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
@@ -113,7 +113,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchData();
-  },[]);
+  }, []);
 
   async function fetchData() {
     const data = await fetch(
@@ -125,13 +125,13 @@ const Body = () => {
     var restorentListAPI =
       restAPIData.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
-    console.log(restAPIData);
+
     setlistOfRestorent(restorentListAPI);
     //console.log(restorentListAPI);
     setSearchListRestorent(restorentListAPI);
   }
   if (onlineStatus === false) {
-    return <h1>Looks like you are offline</h1>;
+    return <h1 className="text-center m-auto">Looks like you are offline</h1>;
   }
   if (listOfRestorent.length === 0) {
     //adding shimmer UI insead of spinner for the good user experience
@@ -190,7 +190,10 @@ const Body = () => {
       <div className="rest-Container flex flex-wrap">
         {searchListRestorent.map((restaurant) => {
           return (
-            <RestorentCard {...restaurant.info} key={restaurant.info.id} />
+            <RestorentCard
+              {...restaurant.info}
+              key={restaurant.info.id}
+            ></RestorentCard>
           );
         })}
       </div>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import RestDetailCordClass from "./RestorentMenu";
+import { ClOUDINARY_IMAGE_URL } from "../components/Utils/constants";
 
 //Link is used to add the url to the tag similarly like ancker tag,
 // but with the ancker tag entire app will get render
@@ -11,10 +12,7 @@ const RestorentCard = (
     <div className="rest-cord w-52 m-3 shadow-xl shadow-gray-300 border border-white bg-gray-100 hover:bg-gray-200 rounded-lg">
       <img
         className="p-1 h-80 rounded-2xl"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
+        src={ClOUDINARY_IMAGE_URL + cloudinaryImageId}
       />
       <Link to={"/restorent/" + id}>
         <h1 className="font-bold py-2">{name}</h1>
@@ -25,5 +23,18 @@ const RestorentCard = (
       <h4>{sla.lastMileTravelString} minutes</h4>
     </div>
   );
+};
+
+//Heigher order components
+//will take one component as argument and return enhanced component
+export const PromotedLableOnCard = (restorent) => {
+  return () => {
+    return (
+      <div>
+        <lable>Promoted</lable>
+        <RestorentCard />
+      </div>
+    );
+  };
 };
 export default RestorentCard;

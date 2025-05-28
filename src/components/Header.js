@@ -1,9 +1,12 @@
-import { use } from "react";
+import { use, useContext } from "react";
 import LogIn from "./LogIn";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "./Utils/useOnlineStatusHook";
+import userName from "./Utils/userContext";
 const Header = () => {
+  const name = useContext(userName);
+
   const onlineStatus = useOnlineStatus();
   console.log(onlineStatus);
   let [btnName, setbtnName] = useState(["LogIn"]);
@@ -17,23 +20,25 @@ const Header = () => {
       </div>
       <div className="Navigation-box">
         <ul className="flex m-10 space-x-2">
-          <li className="px-3">Online Status:{onlineStatus ? " ✅" : " 🔴"}</li>
-          <li className="px-2">Cart</li>
+          <li className="px-3 rounded-sm bg-green-100 m-2">
+            Online Status:{onlineStatus ? " ✅" : " 🔴"}
+          </li>
+          <li className="px-3 rounded-sm bg-green-100 m-2">UserName: {name.name}</li>
 
-          <li className="px-3">
+          <li className="px-3 rounded-sm bg-green-100 m-2">
             <Link to="/">Home</Link>
           </li>
-          <li className="px-3">
+          <li className="px-3 rounded-sm bg-green-100 m-2">
             <Link to="/about">About</Link>
           </li>
-          <li className="px-3">
+          <li className="px-3 rounded-sm bg-green-100 m-2">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="px-3">
+          <li className="px-3 rounded-sm bg-green-100 m-2">
             <Link to="/grocery">Grocery</Link>
           </li>
           <button
-            className="px-3 rounded-sm bg-green-200"
+            className="px-3 rounded-sm bg-green-100 m-2"
             onClick={() => {
               return btnName === "LogIn"
                 ? setbtnName("LogOut")
