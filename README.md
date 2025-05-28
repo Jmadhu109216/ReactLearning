@@ -36,3 +36,7 @@ bundled js files are spilted into multiple files, which is helpes to load on dem
   -->
 
 <!-- added tailwind CSS and also learnt about useContext -->
+<!-- context provides a way to pass data through the component tree without having to pass props down manually at every level
+ -->
+
+<!-- and context is helpful for passing the data at every level with out propdrilling -->
